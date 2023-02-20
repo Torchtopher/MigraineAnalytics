@@ -2,21 +2,16 @@ import os
 import datetime
 import seaborn as sns
 import calendar
-import time 
 import matplotlib.pyplot as plt
-from pyiqvia import Client
-import asyncio
-from aiohttp import ClientSession
 import scipy.stats as stats
 import http.client
 import pgeocode
 import json
 from meteostat import Point, Daily
-import pandas as pd
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.lib.pagesizes import letter
-import reportlab.platypus
 import textwrap
+import argparse
 sns.set_palette("husl")
 # paragraph
 
@@ -674,12 +669,18 @@ def load_pollen():
         json.dump(out, f)
 
 
-if __name__ == "__main__":
+
+if __name__ == "__main__":  
+    # pasre command line arguments
+    parser = argparse.ArgumentParser(description="Create graphs from a migraine timeline")
+    parser.add_argument("input", help="The input file to use")
+    parser.add_argument("zip", help="The zip code to use")
+    args = parser.parse_args()
     remove_graphs()
     timeline = init_from_iHeadache("input.txt")
 
     nomi = pgeocode.Nominatim('us')
-    data = nomi.query_postal_code("27514")
+    data = nomi.query_postal_code(ZIP_CODE)
     lat = data["latitude"]
     lng = data["longitude"]
     # Set time period
