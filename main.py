@@ -633,11 +633,9 @@ def init_from_iHeadache(filename):
         try:
             date = datetime.datetime.strptime(line, "%m/%d/%Y")
             headaches.append(date)
-            out = out + line + "\n"
         except ValueError:
             continue
-    with open("iHeadache.txt", "w") as f:
-        f.write(out)
+
     # create timeline
     return MigraneTimeline(name, start_date, end_date, headaches, ZIP_CODE)
 
@@ -676,8 +674,11 @@ if __name__ == "__main__":
     parser.add_argument("input", help="The input file to use")
     parser.add_argument("zip", help="The zip code to use")
     args = parser.parse_args()
+    print(args)
+    ZIP_CODE = args.zip
+    # remove old graphs
     remove_graphs()
-    timeline = init_from_iHeadache("input.txt")
+    timeline = init_from_iHeadache(args.input)
 
     nomi = pgeocode.Nominatim('us')
     data = nomi.query_postal_code(ZIP_CODE)
