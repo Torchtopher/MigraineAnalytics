@@ -18,7 +18,7 @@ Install python dependencies
 ```pip3 install -r requirements.txt```
 
 Run on test input
-```python3 main.py```
+```python3 main.py iHeadache.txt 27514```
 
 View output pdf.
 
