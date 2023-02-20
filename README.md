@@ -8,7 +8,7 @@ Inspired to make it from the lack of stats and visualization from almost all mig
 
 Currently takes input from the iHeadaches report but planning to add support for more apps later.
 
-Output from the data for my sister.
+Output pdf from the data for my sister.
 ![Migrane_report_for_Meredith Holley-1](https://user-images.githubusercontent.com/88154155/219985801-4e913fbe-ef3e-4bc7-afc5-b0d89feead1d.png)
 ![Migrane_report_for_Meredith Holley-2](https://user-images.githubusercontent.com/88154155/219985802-bde77c20-c16b-4dc8-8884-5bd74b80a377.png)
 ![Migrane_report_for_Meredith Holley-3](https://user-images.githubusercontent.com/88154155/219985804-4dc37d29-bc75-4aa6-9725-7999eea7f68a.png)
@@ -16,3 +16,13 @@ Output from the data for my sister.
 ![Migrane_report_for_Meredith Holley-5](https://user-images.githubusercontent.com/88154155/219985807-f69645a5-3a71-4738-ab51-8471fe90c38d.png)
 
 # Usage
+Clone
+```git clone https://github.com/Torchtopher/MigraineAnalytics```
+
+Install python dependencies
+```pip3 install -r requirements.txt```
+
+Run on test input
+```python3 main.py```
+
+View output pdf.
