@@ -383,7 +383,6 @@ class MigraneTimeline:
         field = "pres"
         # loop through tavg for each day with pandas
         median = self.weather_data.loc[:, field].median()
-        print("Total average temperature: " + str(median))        
         # find days without migraines below average temperature
         days_below_average_w_migrane = 0
         days_above_average_w_migrane = 0
@@ -396,7 +395,6 @@ class MigraneTimeline:
             if previous_pressure == 0:
                 previous_pressure = day[1][field]
                 continue
-            print(f"Pressure: {day[1][field]} Previous pressure: {previous_pressure}")
             date = day[0].to_pydatetime()
             # check if there was a migraine that day
             migraine = False
@@ -446,7 +444,6 @@ class MigraneTimeline:
             print("Odds ratio: " + str((days_above_average_w_migrane * day_below_average_without) / (days_below_average_w_migrane * days_above_average_without)))
         else:
             print(f"There is no significant correlation between {field} and migraines")
-            print("PRESSURE")
         return chi2, p, (days_above_average_w_migrane * day_below_average_without) / (days_below_average_w_migrane * days_above_average_without), median, (days_above_average_w_migrane / total_migraines)
 
 
@@ -458,7 +455,7 @@ class MigraneTimeline:
     def chi_squared_weather(self, field):
         # loop through tavg for each day with pandas
         median = self.weather_data.loc[:, field].median()
-        print("Total average temperature: " + str(median))        
+        print(f"Total average {field}: " + str(median))        
         # find days without migraines below average temperature
         days_below_average_w_migrane = 0
         days_above_average_w_migrane = 0
@@ -505,8 +502,8 @@ class MigraneTimeline:
 
         if p < 0.05:
             print(f"There is a significant correlation between {field} and migraines")
-            print(f"percent high temp migraine: {days_above_average_w_migrane / total_migraines}")
-            print(f"percent low temp migraine: {days_below_average_w_migrane / total_migraines}")
+            print(f"percent high {field} migraine: {days_above_average_w_migrane / total_migraines}")
+            print(f"percent low {field} migraine: {days_below_average_w_migrane / total_migraines}")
             # calculate odds ratio
             print("Odds ratio: " + str((days_above_average_w_migrane * day_below_average_without) / (days_below_average_w_migrane * days_above_average_without)))
         else:
