@@ -3,11 +3,12 @@
 My submission made for Unihacks 2023. Does detailed analysis and outputs a custom report based on trends, and correlation found from diffrent statistical tests and graphs to help people better understand their migraines.
 
 Link to video going through presentation (required to be short) https://www.youtube.com/watch?v=MxuLh1U51ds
+
 Link to slideshow: https://docs.google.com/presentation/d/1U26JB5aJ3m9PL8IeRjSBVmYYO05DgKSLY7i3fFJ6JF8/edit?usp=sharing
 
-Inspired to make it from the lack of stats and visualization from almost all migraine tracking apps. Addiontally my sister has had bad migraines for the last few years so I wanted to help her and make something she might find useful. Ended up showing our family some intresting insights about her migraines and can hopefully help other people as well. 
+Inspired to make it from the lack of stats and visualization from almost all migraine tracking apps. My sister has had bad migraines for the last few years so I wanted to help her and make something she might find useful. Ended up showing our family some intresting insights about her migraines and can hopefully help other people as well. 
 
-Currently takes input from the iHeadaches report but planning to add support for more apps later.
+Currently takes input from the iHeadaches report but planning to add support for more apps later. Feel free to make PRs or issues if you find any problems.
 
 # Usage
 Clone
